@@ -14,7 +14,8 @@ class One {
     try {
       File f = new File(FILENAME);
       List<Integer> list = Utilities.convertFileSequenceToList(f);
-      System.out.println(list.isEmpty());
+      Splitter s = new Splitter();
+      s.searchFirstLast(list, 5);
     } catch (IOException err) {
       err.printStackTrace();
     }
