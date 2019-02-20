@@ -1,0 +1,7 @@
+/**
+ * Second Exercise
+ */
+class Two {
+
+  
+}

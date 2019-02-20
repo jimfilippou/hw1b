@@ -1,0 +1,6 @@
+/**
+ * First Exercise
+ */
+class One {
+
+}
