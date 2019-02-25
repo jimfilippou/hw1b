@@ -1,5 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 import java.util.List;
@@ -15,7 +13,8 @@ class One {
       File f = new File(FILENAME);
       List<Integer> list = Utilities.convertFileSequenceToList(f);
       Splitter s = new Splitter();
-      s.searchFirstLast(list, 5);
+      Result res = s.searchFirstLast(list, 5);
+      res.provideResults();
     } catch (IOException err) {
       err.printStackTrace();
     }

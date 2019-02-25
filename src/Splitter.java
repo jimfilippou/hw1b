@@ -10,12 +10,11 @@ public class Splitter {
 
   public Result searchFirstLast(List<Integer> target, int query) {
     this._query = query;
-    int[] targetArray = new int[target.size()];
-    targetArray = toIntArray(target);
-    System.out.println(Arrays.toString(targetArray));
-    System.out.println(first(targetArray, 0, targetArray.length));
-    System.out.println(last(targetArray, 0, targetArray.length, targetArray.length));
-    return new Result(0, 0);
+    int[] arr = new int[target.size()];
+    arr = toIntArray(target);
+    int first = first(arr, 0, arr.length);
+    int last = last(arr, 0, arr.length, arr.length);
+    return new Result(first, last);
   }
 
   private int first(int arr[], int low, int high) {
@@ -52,14 +51,4 @@ public class Splitter {
     return ret;
   }
 
-}
-
-class Result {
-  int x;
-  int y;
-
-  Result(int x, int y) {
-    this.x = x;
-    this.y = y;
-  }
 }
