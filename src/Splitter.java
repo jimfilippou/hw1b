@@ -7,13 +7,28 @@ import java.util.List;
 public class Splitter {
 
   private int _query;
+  public int[] arr;
 
   public Result searchFirstLast(List<Integer> target, int query) {
     this._query = query;
-    int[] arr = new int[target.size()];
+    this.arr = new int[target.size()];
     arr = toIntArray(target);
-    int first = first(arr, 0, arr.length);
-    int last = last(arr, 0, arr.length, arr.length);
+
+    boolean edgeMatch = arr[0] == arr[arr.length - 1] && arr[0] == _query;
+    boolean isEmpty = arr.length == 0;
+
+    System.out.println();
+    System.out.println(edgeMatch);
+    System.out.println(isEmpty);
+    
+    if (edgeMatch == true)
+      return new Result(arr[0], arr[arr.length - 1]);
+
+    if (isEmpty == true)
+      throw new Error("Array can't be empty");
+
+    int first = first(arr, 0, arr.length - 1 );
+    int last = last(arr, 0, arr.length - 1, arr.length);
     return new Result(first, last);
   }
 

@@ -6,15 +6,18 @@ import java.util.List;
  * First Exercise
  */
 class One {
-  private static final String FILENAME = "/Users/jimfilippou/Projects/hw1b/data/1.1-sm.txt";
+  private static final String FILENAME = "/home/jimfilippou/Desktop/hw1b/data/data.txt";
 
   public static void main(String[] args) {
     try {
       File f = new File(FILENAME);
       List<Integer> list = Utilities.convertFileSequenceToList(f);
-      Splitter s = new Splitter();
-      Result res = s.searchFirstLast(list, 5);
-      res.provideResults();
+      Splitter splitter = new Splitter();
+      try {
+        splitter.searchFirstLast(list, 5).provideResults();
+      } catch (Exception err) {
+        err.printStackTrace();
+      }
     } catch (IOException err) {
       err.printStackTrace();
     }
