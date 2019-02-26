@@ -8,7 +8,12 @@ class Result {
   }
 
   public void provideResults() {
-    System.out.println("First match was found at index " + x);
-    System.out.println("Last match was found at index " + y);
+    if (x == -1 && y == -1) {
+      System.out.println("No match found!");
+    } else {
+      System.out.println("First match was found at index " + x);
+      System.out.println("Last match was found at index " + y);
+    }
+   
   }
 }

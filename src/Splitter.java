@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -7,19 +6,14 @@ import java.util.List;
 public class Splitter {
 
   private int _query;
-  public int[] arr;
 
   public Result searchFirstLast(List<Integer> target, int query) {
     this._query = query;
-    this.arr = new int[target.size()];
+    int[] arr = new int[target.size()];
     arr = toIntArray(target);
 
     boolean edgeMatch = arr[0] == arr[arr.length - 1] && arr[0] == _query;
     boolean isEmpty = arr.length == 0;
-
-    System.out.println();
-    System.out.println(edgeMatch);
-    System.out.println(isEmpty);
     
     if (edgeMatch == true)
       return new Result(arr[0], arr[arr.length - 1]);
