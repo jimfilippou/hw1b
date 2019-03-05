@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 class Two {
@@ -10,8 +11,23 @@ class Two {
     try {
       File f = new File(FILENAME);
       List<Integer> list = Utilities.convertFileSequenceToList(f);
+      int[] arr = new int[list.size()];
+      arr = Two.toIntArray(list);
+      
+      System.out.println(Arrays.toString(arr));
+      new QuickSort().quickSort(arr, 0, arr.length - 1);
+      System.out.println(Arrays.toString(arr));
+
     } catch (IOException err) {
       err.printStackTrace();
     }
+  }
+
+  private static int[] toIntArray(List<Integer> list) {
+    int[] ret = new int[list.size()];
+    int i = 0;
+    for (Integer e : list)
+      ret[i++] = e;
+    return ret;
   }
 }
