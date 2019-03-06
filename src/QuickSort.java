@@ -2,35 +2,51 @@ import java.util.Random;
 
 class QuickSort {
 
-    public void quickSort(int arr[], int begin, int end) {
-        if (begin < end) {
-            int partitionIndex = partition(arr, begin, end);
-            quickSort(arr, begin, partitionIndex - 1);
-            quickSort(arr, partitionIndex + 1, end);
-        }
+   /**
+ * 3-way quicksort
+ * <p/>
+ * Choose a value an put the greater values to the right, lowers to the
+ * left, and equals in the center. recursive. O(n^2) but avg O(n log n). Memory: In place
+ */
+public static void quickSort(int[] array) {
+    shuffleArray(array);
+    quickSort(array, 0, array.length - 1);
+}
+
+private static void quickSort(int[] array, int lo, int hi) {
+    if (hi <= lo)
+        return;
+
+    int lowerIndex = lo;
+    int greaterIndex = hi;
+    int element = array[lo];
+    int i = lo;
+
+    while (i <= greaterIndex) {
+        if (array[i] < element)
+            swap(array, lowerIndex++, i++);
+        else if (array[i] > element)
+            swap(array, i, greaterIndex--);
+        else
+            i++;
     }
 
-    private int partition(int arr[], int begin, int end) {
-        Random r = new Random();
-        int low = 0;
-        int high = arr.length - 1;
-        int result = r.nextInt(high - low) + low;
-        int pivot = arr[result];
-        int i = (begin - 1);
+    quickSort(array, lo, lowerIndex - 1);
+    quickSort(array, greaterIndex + 1, hi);
+}
 
-        for (int j = begin; j < end; j++) {
-            if (arr[j] <= pivot) {
-                i++;
-                int swapTemp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = swapTemp;
-            }
-        }
-
-        int swapTemp = arr[i + 1];
-        arr[i + 1] = arr[end];
-        arr[end] = swapTemp;
-
-        return i + 1;
+// O(n)
+private static void shuffleArray(int[] ar) {
+    Random rnd = new Random();
+    for (int i = ar.length - 1; i > 0; i--) {
+        int index = rnd.nextInt(i + 1); // random between 0 and i
+        swap(ar, i, index);
     }
+}
+
+private static void swap(int[] array, int i, int j) {
+    int a = array[i];
+    array[i] = array[j];
+    array[j] = a;
+}
 }
