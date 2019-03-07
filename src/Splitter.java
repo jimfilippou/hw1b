@@ -1,7 +1,7 @@
 import java.util.List;
 
 /**
- * Splitter
+ * Splitter class
  */
 public class Splitter {
 
@@ -9,6 +9,8 @@ public class Splitter {
 
   public Result searchFirstLast(List<Integer> target, int query) {
     this._query = query;
+
+    // Convert List<Integer> to array of integers
     int[] arr = new int[target.size()];
     arr = toIntArray(target);
 

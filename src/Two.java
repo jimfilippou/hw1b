@@ -5,8 +5,7 @@ import java.util.List;
 
 class Two {
 
-  // private static final String FILENAME =
-  // "/Users/jimfilippou/Projects/hw1b/data/1.2-sm.txt";
+  // private static final String FILENAME = "/Users/jimfilippou/Projects/hw1b/data/1.2-sm.txt";
   private static final String FILENAME = "/home/jimfilippou/Desktop/hw1b/data/1.2-sm.txt";
 
   public static void main(String[] args) {
@@ -15,11 +14,9 @@ class Two {
       List<Integer> list = Utilities.convertFileSequenceToList(f);
       int[] arr = new int[list.size()];
       arr = Two.toIntArray(list);
-
       System.out.println(Arrays.toString(arr));
       QuickSort.quickSort(arr);
       System.out.println(Arrays.toString(arr));
-
     } catch (IOException err) {
       err.printStackTrace();
     }
