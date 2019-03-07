@@ -5,8 +5,8 @@ import java.util.List;
 
 class Two {
 
-  // private static final String FILENAME = "/Users/jimfilippou/Projects/hw1b/data/1.2-sm.txt";
-  private static final String FILENAME = "/home/jimfilippou/Desktop/hw1b/data/1.2-sm.txt";
+  private static final String FILENAME = "/Users/jimfilippou/Projects/hw1b/data/1.2-sm.txt";
+  // private static final String FILENAME = "/home/jimfilippou/Desktop/hw1b/data/1.2-sm.txt";
 
   public static void main(String[] args) {
     try {
