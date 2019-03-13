@@ -1,3 +1,5 @@
+# DEPRECATED BECAUSE KATIA HATES US
+
 #!/bin/bash
 mkdir -p build;
 javac src/*.java;

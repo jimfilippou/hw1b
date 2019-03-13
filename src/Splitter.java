@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 /**
  * Splitter class
@@ -7,7 +7,7 @@ public class Splitter {
 
   private int _query;
 
-  public Result searchFirstLast(List<Integer> target, int query) {
+  public Result searchFirstLast(ArrayList<Integer> target, int query) {
     this._query = query;
 
     // Convert List<Integer> to array of integers
@@ -26,6 +26,13 @@ public class Splitter {
     int first = first(arr, 0, arr.length - 1 );
     int last = last(arr, 0, arr.length - 1, arr.length);
     return new Result(first, last);
+  }
+
+  public int[] fetchResults(Result res) {
+    int[] response = new int[2];
+    response[0] = res.x;
+    response[1] = res.y;
+    return response;
   }
 
   private int first(int arr[], int low, int high) {

@@ -6,10 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Two",
+            "request": "launch",
+            "mainClass": "Two"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch)-One",
             "request": "launch",
             "mainClass": "One",
-            "classPaths": ["/home/jimfilippou/Desktop/hw1b/build"]
+            "classPaths": [
+                "/home/jimfilippou/Desktop/hw1b/build"
+            ]
         }
     ]
 }
