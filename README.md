@@ -1,6 +1,6 @@
 ### Find first and last occurence of element within a sorted array in O(logn)
 
-##### Running (Linux & Mac)
+##### Running
 
 First and foremost, open _ExercisesSet1.java_ and comment/uncomment lines 7/8 depending on what algorithm you want to run. Then do the following.
 
@@ -31,7 +31,7 @@ Algorithm complexity
 |--------------|------------|
 | O(nlogn)     | O(n^2)     |
 
-##### Running (Linux & Mac)
+##### Running
 
 Once again, open _ExercisesSet1.java_ and comment/uncomment lines 7/8 depending on what algorithm you want to run. Then do the following.
 
